@@ -1,0 +1,60 @@
+.centered-button {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los botones */
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+  
+  .custom-button {
+    display: inline-block;
+    padding: 3px 16px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px; /* Espacio entre los botones */
+    margin-left: 1px;
+  }
+  
+.center-icon {
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+.custom-button:hover {
+    background-color: #0056b3;
+  }
+.thumbnail-image {
+    width: 30px;
+    height: 30px; 
+    margin-right: 10px;
+    object-fit: cover; 
+  }
+  
+.custom-button {
+    font-size: 14px; 
+  }
+
+  .imagen1 {
+    width: 250px;
+    height: auto;
+    margin: 0 auto; 
+  }
+
+  .exito {
+    color: green;
+    text-align: center;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+  }

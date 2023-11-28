@@ -1,0 +1,44 @@
+<ion-content class="ion-padding ion-text-center ion-align-items-center">
+  <ion-grid>
+    <ion-row class="icon">
+      <ion-col size="12" class="ion-text-center">
+        <ion-img class="imagen2" src="assets/img/logo.png"></ion-img>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-img class="imagen1" src="assets/img/solarsolutions.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Inicio de sesión</ion-card-title>
+          </ion-card-header>
+          <form [formGroup]="formularioLogin" (ngSubmit)="login()">
+            <ion-item>
+              <ion-label position="floating">Correo Electrónico:</ion-label>
+              <ion-input formControlName="correoElectronico"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña:</ion-label>
+              <ion-input formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <ion-button expand="full" type="submit" [disabled]="!formularioLogin.valid">INGRESAR</ion-button>
+          </form>
+          <div *ngIf="loginError" class="error-message">
+            El correo o contraseña no coincide.
+          </div>
+          <div *ngIf="registroExitoso" class="success-message">
+            Usuario creado correctamente.
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <p>¿No tiene una cuenta? <a [routerLink]="['/registro']" class="ion-text-underline ion-text-primary">REGÍSTRARSE AQUÍ</a></p>
+        <p><a class="ion-text-underline ion-text-primary" [routerLink]="['/recuperacion']">Recuperar contraseña</a></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

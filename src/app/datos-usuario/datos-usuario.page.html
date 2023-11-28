@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/datosdb"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datos del Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="usuario && datosUsuario && urlImagenes && datosUsuario.length === urlImagenes.length">
+  <ion-card>
+    <ion-card-content>
+      <p>Nombre del usuario: {{ usuario.nombreCompleto }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let datos of datosUsuario; let i = index">
+    <ion-card-content>
+      <p>Fecha: {{ datos.fecha }}</p>
+      <p>Empleado: {{ datos.NombreEmpleado }}</p>
+      <p>Ubicación: {{ datos.nombreDelLugar }}</p>
+      <p>Negocio o Empresa: {{ datos.nombreNegocio }}</p>
+      <p>Notas: {{ datos.notas }}</p>
+      <p>Socio: {{ datos.socio }}</p>
+      <p>Valor: {{ datos.valor }}</p>
+
+      <!-- Verifica que haya una imagen correspondiente para este índice -->
+      <ng-container *ngIf="urlImagenes[i]">
+        <p>Imagen:</p>
+        <img [src]="urlImagenes[i]" alt="Imagen del usuario">
+        <a [href]="urlImagenes[i]" download="imagen{{ i }}">Descargar imagen {{ i + 1 }}</a>
+      </ng-container>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-content *ngIf="!usuario || !datosUsuario || !urlImagenes || datosUsuario.length !== urlImagenes.length">
+  <ion-card>
+    <ion-card-content>
+      <p>No hay datos disponibles para mostrar.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+

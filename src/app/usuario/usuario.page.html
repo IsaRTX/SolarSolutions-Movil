@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Usuario</ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- usuario.page.html -->
+<ion-content [fullscreen]="true">
+  <!-- Menú de usuario -->
+  <ion-card>
+    <ion-card-header>
+      Configuración
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Correo Electrónico:</ion-label>
+          <ion-text>{{ correoElectronico }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Nombre Completo:</ion-label>
+          <ion-text>{{ nombreCompleto }}</ion-text>
+        </ion-item>
+
+        <ion-item>
+          <ion-button (click)="confirmarCerrarSesion()">Cerrar Sesión</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
